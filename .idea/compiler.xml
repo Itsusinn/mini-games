@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Meowcat-Minigame" />
+        <module name="MeowMiniGame" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Meowcat-Minigame" target="1.8" />
+      <module name="MeowMiniGame" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
