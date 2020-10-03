@@ -32,6 +32,7 @@ public class Main {
         if (args.length != 8) {
             System.out.println("Usage: -w {width} -h {height} -out {output_file} -wall {DIAMOND,SQUARE}");
             System.out.println("Example: -w 50 -h 100 -out maze_100_100.txt -wall SQUARE");
+            System.out.println("Attention: -Dfile.encoding=UTF-8 needed");
             System.exit(0);
         }
         for (int i = 0; i < args.length; i += 1) {
