@@ -2,12 +2,16 @@ package org.meowcat.minigame.maze;
 
 import lombok.Data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Itsusinn
  */
 @Data
 public class Maze {
 
+    private static final Map<WallType, Character[]> CHARSETS;
     private Block[][] maze;
     private Block[][] wayMaze;
     private int r;
@@ -15,6 +19,12 @@ public class Maze {
     private int row;
     private int column;
     final static int UP = 0,DOWN =1,RIGTH = 2,LEFT = 3;
+
+    static {
+        CHARSETS = new HashMap<>();
+        CHARSETS.put(WallType.DIAMOND, new Character[] {'◆', '◇'});
+        CHARSETS.put(WallType.SQUARE, new Character[] {'█', ' '});
+    }
 
     public int[][] getIntMaze(){
         int[][] intMaze = new int[this.row][this.column];
@@ -25,18 +35,25 @@ public class Maze {
         }
         return intMaze;
     }
-    public void print(){
+    public String print(){
+        return print(WallType.DIAMOND);
+    }
+
+    public String print(final WallType wallType){
+        StringBuilder sb = new StringBuilder();
+        Character[] walls = CHARSETS.get(wallType);
         for(int i = 0; i < this.row; i++){
             for (int j = 0;j < this.column;j++){
                 if (this.maze[i][j].getType()==1){
-                    System.out.print("◆ ");
+                    sb.append(walls[0]).append(" ");
                 }else{
-                    System.out.print("◇ ");
+                    sb.append(walls[1]).append(" ");
                 }
 
             }
-            System.out.println("");
+            sb.append("\n");
         }
+        return sb.toString();
     }
 
     /**
@@ -163,5 +180,10 @@ public class Maze {
             return true;
         }
         return false;
+    }
+
+    public enum WallType {
+        DIAMOND,
+        SQUARE
     }
 }
