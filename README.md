@@ -1,5 +1,5 @@
-# MiniGame
-This warehouse stores some (now one) small games that I use to practice programming languages
+# Mini-Game
+This repository stores some (now one) small games that I use to practice programming languages
 
 ## What it has now？
 
