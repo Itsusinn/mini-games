@@ -25,18 +25,20 @@ public class Maze {
         }
         return intMaze;
     }
-    public void print(){
+    public String print(){
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < this.row; i++){
             for (int j = 0;j < this.column;j++){
                 if (this.maze[i][j].getType()==1){
-                    System.out.print("◆ ");
+                    sb.append("◆ ");
                 }else{
-                    System.out.print("◇ ");
+                    sb.append("◇ ");
                 }
 
             }
-            System.out.println("");
+            sb.append("\n");
         }
+        return sb.toString();
     }
 
     /**
